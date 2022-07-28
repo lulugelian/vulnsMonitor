@@ -6,7 +6,6 @@ import schedule
 import os
 from selenium import webdriver
 
-
 def requestJob(url,driver,vocabList, p0V, p1V, pSpam):
     resultTag = 0
     domain = urllib.parse.urlparse(url).netloc
