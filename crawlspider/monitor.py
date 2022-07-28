@@ -41,7 +41,8 @@ class monitor:
 
     def compareHtml(self,file1,file2):
         with open(file1,'r',encoding='utf-8') as f:
-            text1 = f.read().splitlines(keepends=True)
+            text1str = f.read()
+            text1 = text1str.splitlines(keepends=True)
         with open(file2,'r',encoding='utf-8') as f:
             text2 = f.read().splitlines(keepends=True)
         d = difflib.HtmlDiff()
@@ -53,14 +54,19 @@ class monitor:
         diffContent = ''
         for dif in diffContentHtml:
             diffContent += HTMLParser(dif.text).text()
+        diffContentHtml = soup.find_all("span", class_="diff_chg")
+        for dif in diffContentHtml:
+            diftext = dif.text
+            if diftext not in text1str:
+                diffContent += HTMLParser(diftext).text()
         return diffContent
 
 
 if __name__=='__main__':
     monitorObj=monitor('http://127.0.0.1/vulnswarn/','127.0.0.1')
     #monitorObj.webMonitor()
-    file1 = 'C:\\Data\\PyProject\\vulnsMonitor\\result\\vti.huaun.com\\1.html'
-    file2 = 'C:\\Data\\PyProject\\vulnsMonitor\\result\\vti.huaun.com\\2.html'
+    file1 = 'C:\\Data\\PyProject\\vulnsMonitor\\result\\127.0.0.1\\1.html'
+    file2 = 'C:\\Data\\PyProject\\vulnsMonitor\\result\\127.0.0.1\\2.html'
     diffContent = monitorObj.compareHtml(file1,file2)
     print(diffContent)
 
