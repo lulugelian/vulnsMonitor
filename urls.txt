@@ -1,9 +1,1 @@
-https://vti.huaun.com/Vulnerability
-https://poc.shuziguanxing.com/#/issueList
-https://avd.aliyun.com/high-risk/list
-https://nox.qianxin.com/vulnerability
-https://sec.sangfor.com.cn/security-vulnerability
-https://vas.riskivy.com/vuln
-https://cert.360.cn/warning
-https://cloud.tencent.com/announce?page=1&categorys=21
-https://nvd.nist.gov/
+http://127.0.0.1/vulnswarn/

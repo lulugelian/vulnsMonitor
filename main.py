@@ -14,7 +14,8 @@ def requestJob(url,driver,vocabList, p0V, p1V, pSpam):
     if not os.path.exists('./result/%s'%domain):
         os.mkdir('./result/%s'%domain)
     resultLog =  open('./result/%s/result.log'%domain, 'a',encoding='utf-8')
-    if monitorObj.webMonitor(driver) == 1:
+    webMonitorResult = monitorObj.webMonitor(driver)
+    if webMonitorResult == 1:
         time.sleep(2)
         file1= './result/%s/1.html'%domain
         file2 = './result/%s/2.html'%domain
@@ -25,10 +26,11 @@ def requestJob(url,driver,vocabList, p0V, p1V, pSpam):
                 resultTag = 1
             else:
                 resultLog.write('%s 站点更新，但不是漏洞信息：%s\n'%(time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()),diffContent))
-    elif monitorObj.webMonitor(driver) == 2:
+    elif webMonitorResult == 2:
         resultLog.write('%s 未发现更新\n' % (time.strftime("%Y-%m-%d %H:%M:%S\n", time.localtime())))
-    elif monitorObj.webMonitor(driver) == 3:
+    elif webMonitorResult == 3:
         resultLog.write('%s %s请求异常！！！' % time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time())))
+
     resultLog.close()
     return resultTag
 
@@ -52,7 +54,7 @@ if __name__ == '__main__':
     with open('urls.txt', 'r') as f:
         urls = f.read().splitlines()
     main(urls,vocabList, p0V, p1V, pSpam)
-    schedule.every(1).minutes.do(main,urls,vocabList, p0V, p1V, pSpam)
+    schedule.every(10).minutes.do(main,urls,vocabList, p0V, p1V, pSpam)
     while True:
         schedule.run_pending()
         time.sleep(1)

@@ -2,8 +2,7 @@
 import numpy as np
 import os
 import jieba
-"""pwd = os.getcwd()
-os.chdir('%s/../'%pwd)"""
+
 class charactorTraining:
     def __init__(self):
         pass
@@ -155,7 +154,9 @@ class charactorTraining:
 
 
 if __name__ == '__main__':
+    pwd = os.getcwd()
+    os.chdir('%s/../'%pwd)
     charactorTraining=charactorTraining()
     vocabList,p0V, p1V, pSpam =  charactorTraining.sampleTest()
     #charactorTraining.test(vocabList,p0V, p1V, pSpam)
-    print(charactorTraining.run(vocabList,p0V, p1V, pSpam,"222222"))
+    print(charactorTraining.run(vocabList,p0V, p1V, pSpam,"docker爆出新漏洞"))

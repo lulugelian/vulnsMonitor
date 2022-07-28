@@ -53,9 +53,6 @@ class monitor:
         diffContent = ''
         for dif in diffContentHtml:
             diffContent += HTMLParser(dif.text).text()
-        diffContentHtml = soup.find_all("span", class_="diff_chg")
-        for dif in diffContentHtml:
-            diffContent += HTMLParser(dif.text).text()
         return diffContent
 
 
