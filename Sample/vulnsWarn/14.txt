@@ -1,0 +1,1 @@
+DSO-04415	2021-08-05	低危    qdPM databases.yml 存在信息泄漏漏洞	无CVE有POC无详情

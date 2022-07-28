@@ -1,0 +1,1 @@
+AWS IAM Authenticator for Kubernetes 身份验证绕过漏洞    CVE-2022-2385 (2)    高危    2022-07-19 18:15:48    2022-07-19 18:15:48    420

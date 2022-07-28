@@ -1,0 +1,1 @@
+DSO-06907	2022-07-13	中危    VMware vCenter Server 服务器端请求伪造漏洞 (CVE-2022-22982)    CVE-2022-22982无POC有详情

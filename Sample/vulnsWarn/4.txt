@@ -1,0 +1,1 @@
+DSO-06293	2022-05-24	严重    Contec SolarView Compact 存在命令注入漏洞 (CVE-2022-29303)    CVE-2022-29303有POC有详情

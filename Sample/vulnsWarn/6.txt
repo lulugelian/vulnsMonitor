@@ -1,0 +1,1 @@
+DSO-06117	2022-05-13	严重    Ivanti Endpoint Manager 存在任意代码执行漏洞 (CVE-2021-44529)    CVE-2021-44529有POC无详情

@@ -1,0 +1,1 @@
+Cisco Expressway 系列和 Cisco TelePresence VCS 任意文件覆盖漏洞    CVE-2022-20812 (2)    超危    2022-07-07 17:26:47    2022-07-07 17:26:47    468
