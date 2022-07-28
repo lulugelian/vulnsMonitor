@@ -159,4 +159,4 @@ if __name__ == '__main__':
     charactorTraining=charactorTraining()
     vocabList,p0V, p1V, pSpam =  charactorTraining.sampleTest()
     #charactorTraining.test(vocabList,p0V, p1V, pSpam)
-    print(charactorTraining.run(vocabList,p0V, p1V, pSpam,"docker爆出新漏洞"))
+    print(charactorTraining.run(vocabList,p0V, p1V, pSpam,"11111"))
