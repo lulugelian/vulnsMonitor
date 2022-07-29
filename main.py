@@ -25,11 +25,10 @@ def requestJob(url,driver,vocabList, p0V, p1V, pSpam):
                 resultTag = 1
             else:
                 resultLog.write('%s 站点更新，但不是漏洞信息：%s\n'%(time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()),diffContent))
-    elif webMonitorResult == 2:
-        resultLog.write('%s 未发现更新\n' % (time.strftime("%Y-%m-%d %H:%M:%S\n", time.localtime())))
+        else:
+            resultLog.write('%s 未发现更新\n' % (time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())))
     elif webMonitorResult == 3:
         resultLog.write('%s %s请求异常！！！' % time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time())))
-
     resultLog.close()
     return resultTag
 
