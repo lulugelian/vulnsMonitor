@@ -34,17 +34,20 @@ def requestJob(url,driver,vocabList, p0V, p1V, pSpam):
 
 
 def main(urls,vocabList, p0V, p1V, pSpam):
-    # phantomjs下载地址：https://phantomjs.org/download.html
-    driver = webdriver.PhantomJS(executable_path=r'./crawlspider/phantomjs.exe')
-    for url in urls:
-        print('%s 正在请求%s'%( time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time())),url), flush=True)
-        resultTag = requestJob(url,driver,vocabList, p0V, p1V, pSpam)
-        if resultTag :
-            print('%s %s请求结束,发生漏洞更新!!!' % (time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time())), url), flush=True)
-        else:
-            print('%s %s请求结束,未发生更新' % (time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time())), url), flush=True)
-        time.sleep(10)
-    driver.quit()
+    try:
+        # phantomjs下载地址：https://phantomjs.org/download.html
+        driver = webdriver.PhantomJS(executable_path=r'./crawlspider/phantomjs.exe')
+        for url in urls:
+            print('%s 正在请求%s'%( time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time())),url), flush=True)
+            resultTag = requestJob(url,driver,vocabList, p0V, p1V, pSpam)
+            if resultTag :
+                print('%s %s请求结束,发生漏洞更新!!!' % (time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time())), url), flush=True)
+            else:
+                print('%s %s请求结束,未发生更新' % (time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time())), url), flush=True)
+            time.sleep(10)
+        driver.quit()
+    except:
+        print("%s请求异常!"%time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time())))
 
 if __name__ == '__main__':
     vocabList, p0V, p1V, pSpam = charactorTraining().sampleTest()#获取机器学习结果
