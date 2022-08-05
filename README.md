@@ -59,7 +59,7 @@ vi main.py 修改phantomjs.exe为phantomjs
 chmod +x crawlspider/phantomjs
 python3 main.py
 ```
-设置邮件提醒
+设置邮件提醒（默认不启动）
 ```bash
 修改 main.py 文件
   将sendEmailWarn = 1
