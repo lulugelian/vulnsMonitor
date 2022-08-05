@@ -95,7 +95,7 @@ if __name__ == '__main__':
     with open('urls.txt', 'r') as f:
         urls = f.read().splitlines()
     main(urls,vocabList, p0V, p1V, pSpam,sendEmailWarn)
-    schedule.every(10).minutes.do(main,urls,vocabList, p0V, p1V, pSpam)
+    schedule.every(10).minutes.do(main,urls,vocabList, p0V, p1V, pSpam,sendEmailWarn)
     while True:
         schedule.run_pending()
         time.sleep(1)
