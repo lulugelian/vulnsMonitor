@@ -90,7 +90,7 @@ def main(urls,vocabList, p0V, p1V, pSpam,sendEmailWarn):
 
 if __name__ == '__main__':
     vocabList, p0V, p1V, pSpam = charactorTraining().sampleTest()#获取机器学习结果
-    sendEmailWarn = 1 #是否设置邮件提醒，1启动，0不启动
+    sendEmailWarn = 0 #是否设置邮件提醒，1启动，0不启动
     print('%s 已完成机器学习训练' % (time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())))
     with open('urls.txt', 'r') as f:
         urls = f.read().splitlines()
