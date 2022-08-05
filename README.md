@@ -58,3 +58,10 @@ python3 -m pip install -r requirements.txt
 vi main.py 修改phantomjs.exe为phantomjs
 chmod +x crawlspider/phantomjs
 python3 main.py
+```
+设置邮件提醒
+```bash
+修改 main.py 文件
+  将sendEmailWarn = 1
+  sendEmail函数中配置邮件服务器
+```
